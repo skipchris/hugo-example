@@ -1,0 +1,41 @@
+.leadcap-form {
+  transform-style: preserve-3d;
+  display: flex;
+  align-items: stretch;
+  transition: transform 0.6s;
+  will-change: transform;
+  max-width: 55rem;
+
+  &.flipped {
+    transform: rotateY(180deg);
+  }
+
+  > * {
+    padding-block: var(--space-l);
+    width: 100%;
+    border-radius: 30px;
+    flex: 0 0 auto;
+    backface-visibility: hidden;
+    color: var(--purple);
+  }
+
+  .thanks {
+    padding-inline: var(--space-l);
+    background-color: var(--green);
+    text-align: center;
+    transform: rotateY(180deg);
+    margin-left: -100%;
+    background-color: var(--green);
+
+    & h2 {
+      font-size: var(--step-6);
+      font-family: var(--proxima-b);
+      margin-bottom: var(--space-s);
+    }
+
+    &.thanks-error {
+      background-color: var(--pink);
+    }
+  }
+}
+

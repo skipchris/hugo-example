@@ -1,0 +1,79 @@
+.roi-by-design {
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+
+  .inputs,
+  .factors {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .customer,
+  .customersure,
+  .team > p,
+  .SUCCESSPLAN {
+    box-shadow: var(--shadow);
+    border-radius: var(--border-radius);
+    margin-bottom: 0;
+    padding: var(--step-3);
+
+    & strong {
+      display: block;
+    }
+  }
+
+  .customer,
+  .customersure {
+    border: 2px solid var(--purple-trans);
+  }
+
+  .team > p {
+    background: var(--purple);
+    color: var(--beige);
+    font-family: var(--proxima-sb);
+  }
+
+  .factors {
+    flex-direction: row;
+    gap: var(--step-1);
+
+    & div {
+      box-shadow: var(--shadow);
+      padding: var(--step-3);
+      font-family: var(--proxima-b);
+      background: var(--blue);
+      color: #fff;
+      border-radius: 1rem;;
+    }
+  }
+
+  .SUCCESSPLAN {
+    background: var(--pink);
+    color: #fff;
+  }
+
+}
+
+@container(width > 700px) {
+  .roi-by-design {
+    flex-direction: row;
+    column-gap: 2cqi;
+
+    .factors,
+    .inputs {
+      flex-direction: column;
+      flex-wrap: none;
+    }
+
+    .factors {
+      flex-wrap: wrap;
+    }
+
+    .team,
+    .SUCCESSPLAN {
+      align-self: center;
+    }
+  }
+}

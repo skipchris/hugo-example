@@ -1,0 +1,453 @@
+.homepage-header {
+  background-color: var(--beige);
+  padding-block: var(--space-m-3xl) var(--space-m-2xl);
+
+  text-align: center;
+  overflow: hidden;
+  box-shadow: inset 0 7px 25px -20px var(--purple-trans);
+
+  .header-inner {
+    container-type: inline-size;
+    position: relative;
+    padding-block-end: var(--space-l);
+  }
+
+  .z-index-fix {
+    isolation: isolate;
+  }
+
+  .header-bubble {
+    position: absolute;
+  }
+
+  @container(width < 1000px) {
+    .header-bubble {
+      display: none
+    }
+  }
+
+
+  .photo-bubble-left,
+  .photo-bubble-right {
+    background-size: cover;
+  }
+
+  .photo-bubble-left {
+     --dim: clamp(30px, 20vw, 300px);
+    --rotate: 90deg;
+    left: -4vw;
+    top: 3rem;
+  }
+
+  .photo-bubble-right {
+    --dim: clamp(30px, 20vw, 300px);
+    bottom: clamp(10rem, 50%, 100px);
+    right: -7vw;
+  }
+
+  .photo-bubble-left-1 {
+    --bubble-bg: url(/assets/img/pages/home/header/left2.webp);
+    animation: 4s infinite 2s alternate updownl;
+  }
+
+  .photo-bubble-left-2 {
+    --bubble-bg: url(/assets/img/pages/home/header/left1.webp);
+    animation: 4s infinite 4s alternate opacity,
+               4s infinite 2s alternate updownl;
+  }
+
+  .photo-bubble-right-1 {
+    --bubble-bg: url(/assets/img/pages/home/header/right2.webp);
+    animation: 4s infinite alternate updownr;
+  }
+
+  .photo-bubble-right-2 {
+    --bubble-bg: url(/assets/img/pages/home/header/right1.webp);
+    animation: 4s infinite alternate opacity,
+               4s infinite alternate updownr;
+  }
+
+  .brand-bubble-blue {
+    --dim: clamp(30px, 13vw, 200px);
+    --bubble-bg: var(--blue);
+    left: -10vw;
+    top: 4%;
+  }
+
+  .brand-bubble-pink,
+  .brand-bubble-trans {
+    --dim:clamp(30px, 16vw, 250px);
+    --rotate: 90deg;
+    right: -13vw;
+    top: clamp(0px, 11vw, 150px);
+  }
+
+  .brand-bubble-pink {
+    --bubble-bg: var(--pink);
+    mix-blend-mode: multiply;
+    z-index: 1;
+  }
+
+  .brand-bubble-trans {
+    --bubble-bg: transparent;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+
+
+  & h1 {
+    font-family: var(--proxima-lt);
+    max-width: 60rem;
+    margin-inline: auto;
+    font-size: var(--step-7);
+    & b {
+      font-family: var(--proxima-sb);
+    }
+  }
+
+  & h2 {
+    font-size: var(--step-3);
+    margin-inline: auto;
+    font-family: var(--proxima-lt);
+    max-width: 45rem;
+  }
+}
+
+.hp-panel-3 {
+  background-color: var(--purple);
+  color: var(--bluegrey);
+  font: var(--step-4) var(--proxima-rg);
+  padding-block: var(--space-m-3xl);
+
+  .albatross {
+    --child-width: 28rem;
+    justify-content: space-around;
+
+    & p {
+      margin-block-end: var(--space-xl);
+    }
+  }
+
+  .pic {
+    width: 578px;
+    background: var(--purple)
+                url(/assets/img/pages/home/hp-screenshots.png)
+                center center
+                no-repeat;
+  }
+
+  h1 {
+    text-align: center;
+  }
+
+  .benefit-list {
+    --child-width: 22%;
+    margin-bottom: var(--space-xl-2xl);
+
+    div {
+      display: flex;
+      align-items: center;
+      font-size: var(--step-2);
+      padding: var(--space-s);
+      text-align: center;
+      border-radius: var(--border-radius);
+      margin-bottom: var(--space-m);
+      background-color: var(--bluegrey);
+      color: var(--purple);
+    }
+  }
+}
+
+// .key-benefits {
+//   padding-block: 0 var(--space-m-2xl);
+//   color: var(--bluegrey);
+//   background-color: var(--purple);
+//   background-image: linear-gradient(0deg, #211f43 50%, #192F9A 100%);
+//   text-align: center;
+
+//   .wrap {
+//     margin: 0 auto;
+//     padding-inline: var(--space-s);
+
+//     @media(min-width: 40rem) {
+//       max-width: 60rem;
+//     }
+//   }
+
+//   & h2 {
+//     text-align: center;
+//     margin: 0 auto;
+//     font-family: var(--proxima-b);
+//     font-size: var(--step-5);
+//     margin-bottom: var(--space-l-xl);
+//   }
+
+//   & ul {
+//     list-style: none;
+//     font-family: var(--proxima-sb);
+//     font-size: var(--step-1);
+//     text-align: left;
+
+//     & li {
+//       --icon-size: 60px;
+//       --icon-gap: 90px;
+//       padding-left: var(--icon-gap);
+//       background-repeat: no-repeat;
+//       background-position: center left;
+//       background-size: var(--icon-size);
+//       isolation: isolate;
+//       // Not clear to me why it also needs this positioning if isolated, _maybe_ a browser bug?
+//       // … but it seems consistent cross-browser.
+//       position: relative;
+//       min-height: var(--icon-size);
+
+//       &::before {
+//         content: '';
+//         display: block;
+//         background-color: white;
+//         border-radius: 50%;
+//         height: var(--icon-size);
+//         width: var(--icon-size);
+//         position: absolute;
+//         top: calc(50% - (var(--icon-size)/2));
+//         left: 0;
+//         mix-blend-mode: color-burn;
+//       }
+
+//       &.measure { background-image: url(/assets/img/icons/uparrow-graph.png) }
+//       &.demonstrate { background-image: url(/assets/img/icons/percent.png) }
+//       &.improve { background-image: url(/assets/img/icons/heart-cycle.png) }
+//       &.identify { background-image: url(/assets/img/icons/dial.png) }
+//       &.quality { background-image: url(/assets/img/icons/headset.png) }
+//       &.develop { background-image: url(/assets/img/icons/heads.png) }
+//     }
+
+//     @media(min-width: 40rem) {
+//       display: grid;
+//       text-align: center;
+//       grid-template-columns: repeat(3, 1fr);
+//       gap: 2rem 80px;
+
+//       & li {
+//         --icon-size: 90px;
+//         --icon-gap: 120px;
+//         padding-left: 0;
+//         padding-top: var(--icon-gap);
+//         background-position: 50% 0;
+
+//         &::before {
+//           top: 0;
+//           left: calc(50% - (var(--icon-size)/2));
+//         }
+//       }
+//     }
+//   }
+// }
+
+.case-studies {
+  --breakpoint: 50rem;
+  --child-width: 20rem;
+  --background: #fff;
+  --oval-colour: var(--purple);
+  --oval-offset: 160px;
+  padding-bottom: 0;
+
+  .case-studies-inner {
+    justify-content: space-evenly;
+  }
+
+  & h2 {
+    font-size: var(--step-5);
+  }
+
+  & section {
+    & h3 {
+      font-family: var(--proxima-rg);
+    }
+
+    & blockquote {
+      font-family: var(--proxima-b);
+      padding-bottom: var(--space-m);
+      font-size: var(--step-1);
+
+      &::before {
+        content: '“';
+        display: block;
+        color: var(--blue);
+        font-family: var(--proxima-b);
+        font-size: var(--step-7);
+        line-height: 10px;
+        padding-top: var(--space-m);
+      }
+    }
+  }
+
+  .cta {
+    margin-block-start: var(--space-2xl);
+  }
+}
+
+.stats {
+  padding-block-end: 0;
+}
+
+.why-cs {
+  --child-width: 50%;
+  --breakpoint: 50rem;
+  --oval-colour: var(--beige);
+  --oval-offset: 350px;
+  --background: #fff;
+
+  .why-cs-1 {
+    --albatross-justify: space-around;
+  }
+
+  .why-cs-2 {
+    --albatross-justify: space-evenly;
+  }
+
+  .albatross {
+    width: 80%;
+  }
+
+  & h2 {
+    font-size: var(--step-6);
+    margin-bottom: var(--space-m-2xl);
+  }
+
+  & h3 {
+    font-size: var(--step-3);
+  }
+
+  .content {
+    width: 30%;
+    margin: 4rem 0;
+  }
+
+  .pic1 {
+    width: 60%;
+
+    background: transparent url(/assets/img/pages/home/darren.webp) top center / 30rem no-repeat;
+  }
+
+  & p {
+    font-size: var(--step-2);
+  }
+
+  .pic2 {
+    position: relative;
+    @media (min-width: 65rem) {
+      background: transparent url(/assets/img/pages/home/ipad-no-trans.png) center center / contain no-repeat;
+    }
+
+    .inner {
+      @media (min-width: 65rem) {
+        position: absolute;
+        right: var(--space-l);
+        bottom: var(--space-2xl);
+        width: 42%;
+        & p {
+          font-size: var(--step-1);
+        }
+      }
+
+      color: white;
+      background-color: var(--purple);
+      border-radius: var(--border-radius) var(--border-radius) 60px var(--border-radius);
+      padding: var(--space-s);
+      margin-bottom: var(--space-2xl);
+
+      & p {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .btn {
+    margin-bottom: var(--space-2xl);
+  }
+}
+
+.resources {
+  --breakpoint: 50rem;
+  --child-width: 18rem;
+  --oval-colour: var(--purple);
+  --oval-offset: 200px;
+  --oval-height: 11vw;
+  --background: var(--beige);
+  padding-block: var(--space-m-l) 0;
+
+  .albatross {
+    justify-content: space-between;
+  }
+
+  .roundcard {
+    margin-block-end: var(--space-m);
+  }
+
+  & h2 {
+    font-size: var(--step-6);
+    margin-bottom: var(--space-m-2xl);
+    text-align: center;
+    width: 100%;
+  }
+
+  & section {
+    & p {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.newsletter-plug {
+  padding-block: var(--space-m-3xl);
+  background: var(--purple);
+  color: var(--bluegrey);
+  // .unparalleled-support {
+  //   --breakpoint: 35rem;
+  //   --child-width: 28rem;
+  //   --albatross-justify: center;
+  //   margin: var(--space-m-4xl) auto;
+  //   column-gap: var(--space-2xl);
+
+  //   .content2 {
+  //     background: transparent url(/assets/img/pages/home/people-and-headset.png) center right / contain no-repeat;
+  //   }
+
+  //   & h2 {
+  //     font-size: var(--step-6);
+  //   }
+
+  //   & p {
+  //     font-size: var(--step-2);
+  //     margin-bottom: var(--space-l);
+  //   }
+  // }
+}
+
+.has-oval {
+  --offset: var(--oval-offset, -3vw);
+  --height: var(--oval-height, 10.9vw);
+  background-color: var(--background);
+  background-image:
+                  radial-gradient(ellipse max(800px, 104vw) // oval
+                                          max(100px, calc(var(--height) * 2))
+                                          at 50% 100%,
+                                    var(--oval-colour) 0%,
+                                    var(--oval-colour) 50%,
+                                    var(--background) 50%,
+                                    var(--background) 100%)
+                    ,
+                    linear-gradient(var(--oval-colour) 0%, var(--oval-colour) 100%); // offset area
+
+  background-size: 300vw var(--height), 300vw calc(var(--offset) * 1);
+  background-position: 50% calc(100% - var(--offset)), bottom;
+  background-repeat: no-repeat;
+}
+
+.cta {
+  margin-block-start: var(--space-l);
+  text-align: center;
+  width: 100%;
+}
+

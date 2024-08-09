@@ -1,0 +1,9 @@
+.arrowhead-cta {
+  --size: 2rem;
+  display: inline-block;
+  background: var(--pink) var(--icon-arrowhead) center center no-repeat;
+  border-radius: 50%;
+  width: var(--size);
+  height: var(--size);
+  text-indent: -999999px;
+}

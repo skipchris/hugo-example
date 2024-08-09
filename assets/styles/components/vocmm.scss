@@ -1,0 +1,177 @@
+.vocmm {
+  --child-width: 19%;
+  --breakpoint: 68rem;
+  padding-block-end: 0;
+
+  .vocmm-albatross {
+    > div {
+      border: 1px solid var(--purple-trans);
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow);
+      margin-block-end: var(--space-s);
+
+      & hgroup {
+        padding: var(--space-2xs);
+        color: var(--bluegrey);
+        background-color: var(--blue);
+        text-align: center;
+        border-radius: var(--border-radius) var(--border-radius) 0 0;
+        min-height: 13rem;
+
+        .voc-stage {
+          display: inline-flex;
+          position: relative;
+          top: -2.3rem;
+          align-items: center;
+          justify-content: center;
+          padding: var(--space-3xs);
+          font: var(--step-2) var(--proxima-b);
+          background-color: var(--pink);
+          border-radius: 50%;
+          min-height: 3.5rem;
+          min-width: 3.5rem;
+        }
+
+        h2 {
+          margin-block: calc(-1 * var(--space-s)) var(--space-s);
+        }
+
+        & p {
+          margin-bottom: 0;
+          font-family: var(--proxima-sb);
+        }
+      }
+
+      & ul {
+        list-style: none;
+        margin-top: var(--space-s);
+        padding-inline: var(--space-s);
+
+        & li {
+          padding-inline-start: 0;
+        }
+      }
+    }
+  }
+}
+
+.vocmm-outcomes {
+  margin-block-end: var(--space-m-2xl);
+
+  & h2 {
+    font-size: var(--step-6);
+    text-align: center;
+  }
+
+  .vocmm-performers {
+    display: flex;
+    width: 100%;
+    text-align: center;
+    flex-direction: row;
+    flex-wrap: none;
+
+    > div {
+      padding-block: var(--space-s);
+      font: var(--step-2) var(--proxima-sb);
+
+      .vocmm-pct {
+        font-family: var(--proxima-lt);
+      }
+    }
+
+    .poor-performers {
+      border-top-left-radius: var(--border-radius);
+      border-bottom-left-radius: var(--border-radius);
+      background-color: var(--pink);
+      color: var(--beige);
+      width: 26%;
+    }
+
+    .average-performers {
+      width: 50%;
+      background-color: var(--purple);
+      color: var(--beige);
+      position: relative;
+      --border-block-width: calc(var(--space-xl) - 14px);
+      --border-inline-width: 66px;
+
+      @media(min-width: 71rem) {
+        &::before {
+          content: '';
+          display: inline-block;
+          position: absolute;
+          top: 0;
+          left: 0;
+          border: solid transparent;
+          border-left-color: var(--pink);
+          height: 100%;
+          border-width: var(--border-block-width) var(--border-inline-width);
+        }
+
+        &::after {
+          content: '';
+          display: inline-block;
+          position: absolute;
+          top: 0;
+          right: -0;
+          border: solid var(--blue);
+          border-left-color: var(--purple);
+          border-right-color: transparent;
+          height: 100%;
+          border-width: var(--border-block-width) var(--border-inline-width);
+          transform: translateX(4rem);
+        }
+      }
+    }
+    .top-performers {
+      border-top-right-radius: var(--border-radius);
+      border-bottom-right-radius: var(--border-radius);
+      width: 24%;
+      background-color: var(--blue);
+      color: var(--beige);
+    }
+  }
+
+  .vocmm-stats {
+    --child-width: 49%;
+
+    > div {
+      margin-top: var(--space-m);
+      font: var(--step-1) var(--proxima-md);
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      justify-content: space-around;
+      padding: var(--space-m);
+      background: var(--beige);
+      color: var(--purple);
+      border-top: var(--space-m) solid transparent;
+    }
+
+    .vocmm-stats-poor {
+      border-top-color: var(--pink);
+      border-radius: var(--border-radius);
+    }
+
+    .vocmm-stats-good {
+      border-bottom-right-radius: var(--border-radius);
+      border-top-color: var(--blue);
+      border-radius: var(--border-radius);
+    }
+  }
+}
+
+.vocmm-cta {
+  color: var(--bluegrey);
+  background: var(--purple);
+  text-align: center;
+  padding: var(--space-m-3xl) 0;
+
+  & h2 {
+    font-size: var(--step-6);
+  }
+
+  & a {
+    font-size: var(--step-2);
+  }
+}

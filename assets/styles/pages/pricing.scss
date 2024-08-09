@@ -1,0 +1,227 @@
+.plan-starter {
+  color: var(--blue);
+}
+
+.plan-pro {
+  color: var(--pink);
+}
+
+.pricing-plan-box {
+  border-bottom: 5px solid;
+  padding: var(--space-m);
+  box-shadow: var(--shadow);
+  margin-block-end: var(--space-m);
+
+  h2 {
+    font-family: var(--proxima-sb);
+    padding-top: var(--space-m);
+  }
+
+  p {
+    font-size: var(--step-2);
+    color: var(--purple);
+    small {
+      font-size: var(--step-0);
+      font-family: var(--proxima-lt);
+    }
+  }
+
+}
+
+.pricing-questions {
+  background-color: var(--beige);
+
+  .albatross {
+    --child-width: 45%;
+    font-size: var(--step-2);
+    gap: var(--space-m);
+
+    & h3 {
+      font-size: var(--step-2);
+      margin-bottom: var(--space-3xs);
+    }
+
+  }
+}
+
+.pricing-questions, .pricing-c1 {
+  & h2 {
+      font-size: var(--step-7);
+    }
+}
+
+.pricing-table {
+  text-align: center;
+
+  col {
+    display: none;
+    @media (min-width: 992px) {
+      display: table-column;
+    }
+  }
+
+  thead {
+    tr {
+      display: flex;
+      flex-wrap: wrap;
+
+      @media (min-width: 992px) {
+        display: table-row;
+      }
+    }
+
+    td {
+      display: none;
+      @media (min-width: 992px) {
+        display: table-cell;
+      }
+    }
+
+    th {
+      display: block;
+      width: 100%;
+      margin-bottom: var(--space-m);
+      @media (min-width: 768px) {
+        flex: 0 0 45%;
+        margin-right: var(--space-s);
+        margin-left: var(--space-s);
+      }
+
+      @media (min-width: 992px) {
+        display: table-cell;
+        width: auto;
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .pricing-plan {
+    @media (min-width: 992px) {
+      position: sticky;
+      top: 1px;
+      height: 100%;
+    }
+    padding: 0;
+    background-color: #fff;
+    color: var(--purple);
+    font-family: var(--proxima-lt);
+    font-weight: 300;
+
+    .plan-details {
+      @media (min-width: 992px) {
+        display: none;
+      }
+      p {
+        margin: 0 0 var(--space-s);
+        padding-bottom: var(--space-s);
+        border-bottom: 1px solid var(--bluegrey);
+
+        strong {
+          display: block;
+        }
+
+        &:last-child {
+          border-bottom: 0;
+        }
+      }
+    }
+
+    .pricing-plan-intro {
+      border-bottom: 5px solid;
+      padding: var(--space-m);
+      box-shadow: var(--shadow);
+
+      @media (min-width: 992px) {
+        display: block;
+        // display: table creates a wild 1px bottom gap between the border and ¡OUTLINE!
+        // which I didn’t think was possible and can’t account for. Thankfully setting
+        // the height to 100% + 1 swallows it up.
+        // height: calc(100% + 1px);
+        min-height: 180px;
+        padding: var(--space-xs);
+        margin-right: var(--space-xs);
+        margin-left: var(--space-xs);
+      }
+    }
+
+    &.starter {
+      color: var(--blue);
+    }
+
+    &.pro {
+      color: var(--pink);
+    }
+
+    h4 {
+      font-family: var(--proxima-sb);
+      padding-top: var(--space-m);
+    }
+
+    p {
+      color: var(--purple);
+
+      &.lead {
+        margin-bottom: var(--space-s);
+        small {
+          font-family: var(--proxima-lt);
+        }
+      }
+    }
+  }
+
+  tbody {
+    display: none;
+
+    @media (min-width: 992px) {
+      display: table-row-group;
+    }
+
+    th.spanned-subheader {
+      font-size: var(--step-4);
+      font-family: var(--proxima-sb);
+      font-weight: normal;
+      border-bottom: 1px solid #ddd;
+      padding: var(--space-s) 0;
+    }
+
+    th {
+      padding-block: var(--space-xs);
+      text-align: left;
+      border-bottom: 1px solid var(--bluegrey);
+
+      h4 {
+        margin-bottom: var(--space-2xs);
+        font-size: var(--step-2);
+        font-family: var(--proxima-lt);
+      }
+      p {
+        margin-bottom: 0;
+        font-size: var(--step-0);
+        font-family: var(--proxima-lt);
+        font-weight: normal;
+      }
+    }
+
+    td {
+      font: var(--step-1) var(--proxima-rg);
+      padding: 0;
+      border-bottom: 1px solid var(--bluegrey);
+      vertical-align: middle;
+
+      small {
+        font: var(--step--2) var(--proxima-lt);
+        display: block;
+        margin-bottom: calc(-1 * var(--space-sm));
+      }
+    }
+
+    tr {
+      &:last-child {
+        td,
+        th {
+          border-bottom: 0;
+        }
+      }
+    }
+  }
+}

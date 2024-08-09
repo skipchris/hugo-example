@@ -1,0 +1,134 @@
+$breakpoint: 810px;
+
+@media(min-width: $breakpoint) {
+  body > header > nav {
+    margin-inline-start: auto;
+    position: static;
+    background-color: transparent;
+
+
+    // Styles shared between a/buttton
+    & a,
+    button {
+      display: inline-block;
+      color: #000;
+      &:hover {
+        color: var(--blue);
+      }
+      padding-block: var(--space-2xs);
+    }
+
+    // The top-level ul
+    > ul {
+      --child-width: max-content;
+      --breakpoint: 400px;
+      align-items: center;
+      column-gap: var(--space-xs-m);
+      justify-content: end;
+
+      // This is a little disappointing, but I could not dream up a way of positioning the dropdown menus
+      // relative to the parent item, but the panels relative to the document without adding the class to the li :(
+      // (And I couldn’t dream up a google query to help me find one).
+      //
+      // Switching the panels to position: sticky sort-of fixes it, but then they’re relative to the viewport,
+      // not the document.
+
+      > li {
+        position: relative;
+      }
+
+      > li.with-panel {
+        position: static;
+      }
+
+      // Styles shared between menus and panels.
+      .dropdown-menu,
+      .dropdown-panel {
+        position: absolute;
+        z-index: 2;
+
+        li > a {
+          display: block;
+          border-bottom: 1px solid var(--purple-dark);
+          color: var(--bluegrey);
+          font: var(--proxima-lt);
+
+          &:hover {
+            background-color: var(--blue);
+            color: var(--bluegrey);
+          }
+        }
+      }
+
+      .dropdown-menu {
+        left: 50%;
+        top: calc(2 * var(--space-m) + 2 * var(--space-2xs) - 1px);
+        transform: translateX(-50%);
+
+        & a {
+          width: max-content;
+          min-width: 100%;
+          padding: var(--space-2xs) var(--space-m);
+          background: var(--purple);
+          text-align: center;
+        }
+      }
+
+      .dropdown-panel {
+        --panel-col-gap: var(--space-xl);
+        top: 135px;
+        left: 0;
+        width: 100%;
+        background-color: var(--purple);
+        color: var(--bluegrey);
+
+        .dropdown-panel-inner {
+          display: flex;
+          column-gap: var(--panel-col-gap);
+          width: 100%;
+          max-width: var(--home-col-width);
+          margin: 0 auto;
+          padding-block: var(--space-m);
+
+          & ul {
+            display: grid;
+            column-gap: var(--panel-col-gap);
+
+            & a {
+              --icon-w: 13px;
+              --icon-h: 12px;
+              --icon-right: 8px;
+              --icon-top: 1rem;
+              --icon-colour: var(--green);
+              --svg-icon: var(--icon-rarr);
+              padding: var(--space-2xs) 32px var(--space-2xs) var(--space-xs);
+            }
+
+            & a:hover {
+              --icon-colour: #fff;
+            }
+          }
+
+          .two-col {
+            grid-template-columns: 1fr 1fr;
+          }
+
+          .three-col {
+            grid-template-columns: repeat(3, 1fr);
+          }
+        }
+      }
+    }
+
+    .webinar-date {
+      --svg-icon: var(--icon-calendar);
+      --icon-w: 22px;
+      --icon-h: 24px;
+      --icon-colour: var(--blue);
+      --icon-left: 0;
+      --icon-top: -2px;
+
+      padding-left: 2rem;
+    }
+  }
+}

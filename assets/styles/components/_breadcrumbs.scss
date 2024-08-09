@@ -1,0 +1,14 @@
+.breadcrumbs > a {
+  text-decoration: none;
+}
+
+.breadcrumbs > *:not(:last-child)::after {
+  content: '>';
+  text-decoration-line: none;
+  color: var(--purple);
+  padding-inline: var(--space-xs);
+}
+
+.longform-content:has(.breadcrumbs) {
+  padding-block-start: var(--space-m-l);
+}

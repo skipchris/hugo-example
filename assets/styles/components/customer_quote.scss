@@ -1,0 +1,57 @@
+// Shortly we’ll be able to use container style queries to flip the padding
+// if the background is set, but at present you just need to specify both.
+
+.customer-quote {
+  --quotemark-colour: var(--colour, var(--blue));
+  --bgcol: var(--background, transparent);
+  --fgcol: var(--foreground, var(--purple));
+  --pad: var(--padding, 0);
+
+  background-color: var(--bgcol);
+  color: var(--fgcol);
+  border-radius: var(--border-radius) var(--border-radius) 60px var(--border-radius);
+  padding: var(--pad);
+
+  &::before {
+    content: '“';
+    display: block;
+    color: var(--quotemark-colour);
+    font-family: var(--proxima-b);
+    font-size: var(--step-7);
+    line-height: 10px;
+    padding-top: var(--space-m);
+  }
+
+  font-size: var(--step-3);
+
+  & cite {
+    &::before {
+      content: '— ';
+    }
+
+    display: block;
+    padding-top: var(--space-m);
+    font-family: var(--proxima-sb);
+    font-style: normal;
+    color: var(--pink);
+  }
+}
+
+.cq-bluegrey {
+  --bgcol: var(--bluegrey);
+  --fgcol: var(--purple);
+  --pad: var(--space-l);
+}
+
+.cq-beige {
+  --bgcol: var(--beige);
+  --col: var(--purple);
+  --pad: var(--space-l);
+}
+
+.cq-white {
+  --bgcol: #fff;
+  --col: var(--purple);
+  --pad: var(--space-l);
+}
+

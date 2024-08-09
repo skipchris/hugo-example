@@ -1,0 +1,54 @@
+.industry-intro {
+  --child-width: 50%;
+  font-size: var(--step-2);
+
+  .financial-services & {
+    .pic { background: transparent url(/assets/img/screenshots/npsdashboard.png) center no-repeat;}
+  }
+
+  .social-housing & {
+    .pic {
+      background-color:  transparent;
+      background-repeat: no-repeat;
+      background-image: url(/assets/img/pages/working-together/step4.webp);
+      background-position: right top;
+      background-size: 90% ;
+    }
+  }
+}
+
+.fs-2 {
+  background-color: var(--purple);
+}
+
+.trusted-partner {
+  font-size: var(--step-2);
+  padding-block: var(--space-l-xl);
+  --child-width: 45%;
+
+  & h2 {
+    margin-block-start: 0;
+    padding-block-start: 0;
+    font-size: var(--step-6)
+  }
+
+  .guy { background: transparent
+                     url('/assets/img/pages/working-together/step2.webp')
+                     center
+                     no-repeat; }
+}
+
+.trusted-secure {
+  --child-width: 48%;
+
+  p {
+    font-size: var(--step-2);
+  }
+
+  .d {
+    background: transparent
+                url(/assets/img/pages/home/darren.webp)
+                center / 30rem
+                no-repeat;
+  }
+}

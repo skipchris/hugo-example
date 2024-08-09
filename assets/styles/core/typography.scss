@@ -1,0 +1,91 @@
+// If Proxima isn’t available, fall back to system default (San Francisco) > Helvetica > Arial > generic sans serif.
+$sans-serif-fallback-stack: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif,
+'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+
+::selection {
+  background-color: var(--hilite-pink);
+}
+
+body {
+  font-family: var(--proxima-lt);
+  font-size: 16px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+h1, h2, h3 {
+  font-family: var(--proxima-b);
+}
+
+h4, h5, h6 {
+  font-family: var(--proxima-md);
+}
+
+h1 {
+  font-size: var(--step-7);
+}
+
+h2 {
+  font-size: var(--step-4);
+  margin-bottom: var(--space-l);
+}
+
+h3 {
+  font-size: var(--step-2);
+  margin-bottom: var(--space-m);
+}
+
+h4 {
+  font-size: var(--step-2);
+  margin-bottom: var(--space-s);
+}
+
+h5, h6 {
+  font-size: var(--step-1);
+}
+
+p {
+  margin-bottom: var(--space-m);
+
+  &.lead {
+    font-family: var(--proxima-md);
+    line-height: 1.2;
+  }
+}
+
+li {
+  margin-bottom: var(--space-2xs);
+}
+
+b,
+strong {
+  font-family: var(--proxima-b);
+  font-weight: 500;
+}
+
+
+ul {
+  margin-bottom: var(--space-m);
+  // 1rem, which handily == the width of a bullet + space.
+  padding-left: 1rem;
+
+  li {
+    padding-left: 1rem;
+  }
+}
+
+a {
+  color: var(--blue);
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.software-reference {
+  font-family: var(--proxima-sb);
+  font-style: normal;
+}

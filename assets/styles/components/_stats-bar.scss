@@ -1,0 +1,17 @@
+.stats-bar {
+  .albatross {
+    text-align: center;
+    div {
+      h2 {
+        font-family: var(--proxima-rg);
+        font-size: var(--step-1);
+        margin-bottom: var(--space-2xs);
+        text-transform: uppercase;
+      }
+      > span {
+        font-size: var(--step-8);
+        font-family: var(--proxima-b);
+      }
+    }
+  }
+}

@@ -1,0 +1,271 @@
+body {
+  > section {
+    padding-block: var(--space-m-2xl);
+    clear: both; // clears floats in longform content.
+  }
+
+  > section {
+    > div {
+      padding: 0 var(--space-s);
+    }
+    > div + div {
+      margin-top: var(--space-m);
+    }
+  }
+}
+
+body > section > div {
+  margin-inline: auto;
+  max-width: var(--home-col-width);
+}
+
+.page-header {
+  padding: var(--space-m-2xl) var(--space-xs);
+  background-color: var(--beige);
+  color: var(--purple);
+
+  > div {
+    container-type: inline-size;
+  }
+
+  & h1 {
+    font-family: var(--proxima-lt);
+    margin-block-end: 0;
+  }
+}
+
+.product-cta {
+  --child-width: 50%;
+  background-color: var(--purple);
+  color: #fff;
+
+  .pic {
+    background: transparent url(/assets/img/screenshots/csat-ipad.png) center / contain no-repeat;
+  }
+
+  & p {
+    font-size: var(--step-3);
+  }
+}
+
+.about-header {
+  padding-top: var(--space-l);
+  h1 {
+    font-family: var(--proxima-lt);
+     text-shadow: 1px 1px 1px #black;
+     color: white
+  }
+  background: transparent url('/assets/img/pages/about/team.jpg') top right / 100% no-repeat;
+  height: 550px;
+}
+
+.about-origin {
+  --child-width: 60%;
+  font-size: var(--step-2);
+
+
+  & h2 {
+    width: 100%;
+  }
+
+  .pic {
+    width: 40%;
+    background: transparent url('/assets/img/pages/about/about-1-comp.webp') top right / 85% no-repeat;
+  }
+}
+
+
+.about-fit {
+  background-color: var(--beige);
+
+  .who-for {
+    --child-width: 100%;
+    p {
+      font-size: var(--step-3);
+    }
+  }
+
+  .customersure-way {
+    --child-width: 45%;
+    font-size: var(--step-3);
+    gap: var(--space-m);
+
+    & h3 {
+      font-size: var(--step-3);
+      margin-bottom: var(--space-3xs);
+    }
+
+    & img {
+      max-width: 100%;
+    }
+  }
+}
+
+.about-team {
+  .people {
+    h3 {
+      margin-block-start: var(--space-s);
+      margin-block-end: var(--space-3xs);
+      font-size: var(--step-2);
+      text-align: left;
+    }
+    p {
+      text-transform: uppercase;
+      color: #49525f;
+      font-family: var(--proxima-md);
+      font-size: var(--step-1);
+      text-align: left;
+    }
+    img {
+      width: 100%;
+    }
+  }
+}
+
+.about-stats {
+  background-color: var(--purple);
+  color: white;
+}
+
+.about-company-background {
+  --child-width: 50%;
+  background-color: var(--beige);
+  font-size: var(--step-2);
+
+  h2 {
+    font-size: var(--step-7);
+    text-align: left;
+  }
+
+  .pic {
+    background: transparent url('/assets/img/pages/about/awards.webp') top right / 70% no-repeat
+  }
+}
+
+.sectors-1 {
+  --child-width: 22%;
+}
+
+.sectors-2 {
+  background-color: var(--purple);
+  color: var(--bluegrey);
+  --child-width: 50%;
+
+  .albatross {
+    padding-block: var(--space-m-2xl);
+  }
+
+  .pic {
+    background: transparent url('/assets/img/screenshots/csat-ipad-iphone.png') center/contain no-repeat;
+  }
+}
+
+
+.contact-layout {
+  @media(min-width: 40em) {
+    display: grid;
+  }
+  grid-template-columns: 1fr 30%;
+  column-gap: var(--space-xl);
+}
+
+.resources-content {
+  --child-width: 31%;
+
+  .albatross {
+    --albatross-justify: left;
+    gap: var(--space-m);
+
+    > h2, > p {
+      margin-bottom: 0; // because of gap
+    }
+
+    > p {
+      width: 100%;
+      font-size: var(--step-2);
+      text-align: center;
+    }
+  }
+}
+
+.resources-blog {
+  background-color: var(--purple);
+  color: #fff;
+}
+
+.i-can-haz-halp {
+  background-color: var(--beige);
+  color: var(--purple);
+
+
+  & h2 {
+    margin-bottom: 0;
+  }
+
+  .albatross {
+    --albatross-justify: center;
+    align-items: center;
+    column-gap: var(--space-m);
+  }
+}
+
+.blog-index:nth-child(2n+1) {
+  background-color: var(--beige);
+  color: var(--purple);
+}
+
+.blog-index > div {
+  display: flex;
+  column-gap: var(--space-m);
+
+  & p {
+    font-size: var(--step-2);
+  }
+
+  .post-meta {
+    font-size: var(--step--1);
+    margin-block-end: 0;
+  }
+
+
+  // This is a bit wild but it accounts for the fact that we want 1:1 circles
+  // from the rectangles in the CMS which are all different sizes.
+  // Basically, create a 130px 'window', centre a 240px image in that window
+  // (with the edges hidden, clipping outside that window), then clip *that*
+  // to a central circle.
+  .blog-index-img {
+    overflow: hidden;
+    position: relative;
+    min-width: 130px;
+
+    > img {
+      clip-path: circle(33% at center);
+      position: absolute;
+      width: 100%;
+      transform:translateX(-50%);
+      left: 50%;
+      min-width: 240px;
+    }
+  }
+}
+
+.whitepaper-page {
+  font-size: var(--step-2);
+  --child-width: 45%;
+
+  .albatross {
+    column-gap: var(--space-m);
+  }
+
+  .form-group:not(:empty) {
+    display: flex;
+    align-items: center;
+    margin-bottom: var(--space-s);
+
+    label {
+      width: 20%;
+    }
+  }
+}
+
+

@@ -1,0 +1,8 @@
+baseURL = 'https://www.example.com/'
+languageCode = 'en-gb'
+title = 'Sample Site'
+disableKinds = ['taxonomy', 'term']
+
+[permalinks]
+  [permalinks.page]
+    guides = '/:filename'

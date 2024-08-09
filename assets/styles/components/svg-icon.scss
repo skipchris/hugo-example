@@ -1,0 +1,21 @@
+.svg-icon {
+  position: relative;
+}
+
+.svg-icon::before {
+  content: "";
+  position: absolute;
+  -webkit-mask: var(--svg-icon) no-repeat;
+  mask: var(--svg-icon) no-repeat;
+  mask-size: contain;
+  mask-position: center;
+  width: var(--icon-w);
+  height: var(--icon-h);
+  top: var(--icon-top);
+  right: var(--icon-right);
+  bottom: var(--icon-bottom);
+  left: var(--icon-left);
+  background-color: var(--icon-colour);
+  transition: color var(--trans-speed) ease-in-out,
+              background-color var(--trans-speed) ease-in-out,
+}

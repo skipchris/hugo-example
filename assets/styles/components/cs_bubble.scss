@@ -1,0 +1,11 @@
+.cs-bubble {
+  --fallback: 100px;
+  --bc: calc(var(--dim, var(--fallback)) * 0.9);
+  --sc: calc(var(--dim, var(--fallback)) * 0.08);
+  display: block;
+  height: var(--dim, var(--fallback));
+  width: var(--dim, var(--fallback));
+  border-radius: var(--bc) var(--bc) var(--sc) var(--bc);
+  background: var(--bubble-bg, blue);
+  transform: rotate(var(--rotate, 0));
+}

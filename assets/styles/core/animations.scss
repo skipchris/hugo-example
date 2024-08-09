@@ -1,0 +1,29 @@
+@keyframes opacity {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes updownr {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(8%);
+  }
+}
+
+@keyframes updownl {
+  from {
+    transform: translateY(0) rotate(90deg);
+  }
+
+  to {
+    transform: translateY(8%) rotate(90deg);
+  }
+}

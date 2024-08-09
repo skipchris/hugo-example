@@ -1,0 +1,18 @@
+.logo-bar {
+  max-width: var(--home-col-width);
+  margin-inline: auto;
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+
+  & h2 {
+    font: var(--step-3) var(--proxima-b);
+    width: 100%;
+  }
+
+  & div {
+    margin: var(--space-xs) var(--space-xs);
+  }
+}

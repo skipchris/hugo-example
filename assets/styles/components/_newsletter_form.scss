@@ -1,0 +1,71 @@
+.newsletter-plug {
+  .leadcap-form {
+    & h2 {
+      font-size: var(--step-6);
+      text-align: center;
+      margin-bottom: var(--space-s);
+    }
+
+    & p {
+      font-family: var(--proxima-rg);
+      font-size: var(--step-2);
+      text-align: center;
+    }
+
+    & form {
+      background-color: var(--beige);
+      padding-inline: var(--space-l);
+    }
+
+    & fieldset {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: var(--space-s);
+      position: relative;
+    }
+
+    & label {
+      text-indent: -999999px;
+    }
+
+    .form-control {
+      max-width: 25rem;
+      width: 60%;
+    }
+
+    .consent {
+      font: var(--step--1) var(--proxima-lt);
+      margin-block: var(--space-s) 0;
+    }
+
+    .mail-icon {
+      --dim: 88px;
+      --bubble-bg: var(--blue) var(--icon-mail) center center / 50px no-repeat;
+      position: absolute;
+      display: none;
+      @media(min-width: 36rem) {
+        display: block;
+      }
+      left: -87px;
+      bottom: 1rem;
+    }
+
+    &.leadcap-industry {
+      fieldset {
+        flex-wrap: wrap;
+        gap: unset;
+        row-gap: var(--space-s);
+        justify-content: space-evenly;
+
+        .form-control {
+          width: 47%;
+        }
+
+        .btn {
+          width: 90%;
+        }
+      }
+    }
+  }
+}

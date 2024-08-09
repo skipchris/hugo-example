@@ -1,0 +1,48 @@
+.support-panel {
+  font-size: var(--step-2);
+  padding-block: var(--space-l-xl);
+  --child-width: 50%;
+
+  & h2 {
+    font-size: var(--step-6)
+  }
+
+  .support-text {
+    padding-block: 6rem;
+  }
+
+  .pic1 { background: transparent url('/assets/img/pages/working-together/step1.webp') center right / 95% no-repeat; }
+  .pic2 { background: transparent url('/assets/img/pages/working-together/step2.webp') 0 top / 85% no-repeat; }
+  .pic3 {background: transparent url('/assets/img/pages/working-together/step3.webp') center right / 80% no-repeat; }
+  .pic4 { background: transparent url('/assets/img/pages/working-together/step4.webp') 0 top / 80% no-repeat; }
+  .pic5 { background: transparent url('/assets/img/pages/working-together/step5.webp') center right / 80% no-repeat; }
+}
+
+.support-0 {
+  padding-block-end: 0;
+  font-family: var(--proxima-lt);
+  font-size: var(--step-3);
+}
+
+.roi-header {
+  img {
+    width: 90%;
+    margin-top: var(--space-m);
+    margin-left: var(--space-m);
+  }
+}
+
+.embedding {
+  background-color: var(--beige);
+  h1, img {
+    margin: auto;
+    text-align: center;
+  }
+  img {
+    margin-top: var(--space-sm);
+    width: 100%;
+  }
+}
+
+
+

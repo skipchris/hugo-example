@@ -1,0 +1,36 @@
+.form-control {
+  border: 1px solid var(--purple-trans);
+  border-radius: 30px;
+  padding: .5625rem 1.6875rem;
+}
+
+select.form-control {
+  appearance: none;
+  padding-right: 1em;
+  position: relative;
+  display:block;
+  background:
+    white
+    var(--icon-caret)
+    calc(100% - 1em) calc(50% + .15em)
+    no-repeat;
+    background-size: 12px;
+}
+
+select.form-control::after {
+    content: 'helloooooooooooo';
+    position: absolute;
+    right: 1em;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    border: solid #333;
+    border-width: 0 0.15em 0.15em 0;
+    padding: 0.15em;
+    transform: rotate(45deg);
+    display: inline-block;
+}
+
+select:required:invalid {
+  color: #8e8e8e;
+}

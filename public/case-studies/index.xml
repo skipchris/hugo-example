@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Case studies on Sample Site</title>
+    <link>http://localhost:1313/case-studies/</link>
+    <description>Recent content in Case studies on Sample Site</description>
+    <generator>Hugo</generator>
+    <language>en-gb</language>
+    <atom:link href="http://localhost:1313/case-studies/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Barchester Healthcare VoC Case Study</title>
+      <link>http://localhost:1313/case-studies/barchester/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/case-studies/barchester/</guid>
+      <description>Company: Barchester Healthcare&#xA;Location: Throughout the UK – 250 care homes and mental health hospitals.&#xA;One of the biggest independent care providers in the UK, Barchester specialises in delivering top quality care.&#xA;{:class=&amp;ldquo;longform-pull-right&amp;rdquo;}We asked Sarah Lander-Scott, Head of Customer Contact &amp;amp; Experience, to describe her experience of measuring and improving Net Promoter Score using real-time feedback from residents, family and friends.&#xA;Tell us about Barchester… We provide care for those who need it.</description>
+    </item>
+  </channel>
+</rss>

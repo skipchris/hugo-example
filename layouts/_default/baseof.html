@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  {{ if eq hugo.Environment "production" }}
+      {{ partial "analytics.html" . }}
+  {{ end }}
+
+  {{ template "_internal/opengraph.html" . }}
+  {{ template "_internal/twitter_cards.html" . }}
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+{{ $opts := dict "transpiler" "dartsass" "targetPath" "/assets/styles/example.css" }}
+{{ with resources.Get "styles/example.scss" | toCSS $opts | minify | fingerprint }}
+  <link rel="stylesheet"
+        href="{{ .RelPermalink }}"
+        integrity="{{ .Data.Integrity }}"
+        crossorigin="anonymous">
+{{ end }}
+
+
+  <title>{{ .Title }} | {{ .Site.Title }}</title>
+
+  {{ if .Params.noindex }}
+    <meta name="robots" content="noindex">
+  {{ end }}
+
+  {{ partial "schema.html" . }}
+
+</head>
+<body class="{{ default "" .Params.body_class }}">
+  {{ partial "brand-and-nav.html" . }}
+
+  {{ block "main" . }}{{ end }}
+  {{ partial "footer.html" . }}
+</body>
+</html>
+
+
+
+
+
+
+

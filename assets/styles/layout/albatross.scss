@@ -1,0 +1,28 @@
+// Original idea, with explanations:
+// https://heydonworks.com/article/the-flexbox-holy-albatross-reincarnated/
+//
+// Expanded to allow simpler width setting on children:
+// https://css-tricks.com/holy-albatross-with-widths/
+
+// Simplified to use min-width:
+// https://www.miragecraft.com/articles/unholy_albatross.html
+
+// The px units on 0px is required for some super-techy reason, I have lost the link which explains why.
+
+.albatross {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: var(--albatross-justify, space-between);
+
+  // I think this h2 is debateably not part of the component (which is nominally just responsible for
+  // adjusting the child width at a breakpoint), but in actual pragmatic usage, we do this every time.
+  > h2 {
+    width: 100%;
+    text-align: center;
+  }
+
+  > * {
+    width: var(--child-width);
+    min-width: clamp(0px, (var(--breakpoint) - 100%) * 999, 100%);
+  }
+}

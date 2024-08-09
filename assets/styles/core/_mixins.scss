@@ -1,0 +1,63 @@
+//
+// Padding-block
+//
+
+// It is annoying, when you often want to set padding-top/padding-bottom to have
+// to write them both out longform if you want to avoid overriding padding-left
+// and padding-right.
+//
+// CSS has a solution for this, 'padding-block' (and its friend padding-inline
+// which does the same on the x-axis (assuming text is flowing RTL; TTB))
+//
+// This solution is not fully-standardised yet. At the time of writing, safari
+// and IE11 do not support it. So this mixin exists so we can write:
+//
+// @include padding-block($padding)
+//
+// which will convert to the fully-compatible, longhand properties.
+//
+// But at some point in future when Safari plays ball we can find/replace to:
+//
+// padding-block: $padding;
+//
+// Which will have identical results
+
+@mixin padding-block($padding) {
+  padding-top: $padding;
+  padding-bottom: $padding;
+}
+
+//
+// Padding-inline
+//
+
+// Just like padding-block but on the y-axis (when text flows RTL; TTB OFC)
+
+@mixin padding-inline($padding) {
+  padding-right: $padding;
+  padding-left: $padding;
+}
+
+
+//
+// Highlight breakpoints
+//
+
+// Just for development.
+
+@mixin highlight-breakpoints {
+  // sass-lint:disable no-color-keywords, no-color-literals
+  outline: 3px solid red;
+  @include media-breakpoint-up(sm) {
+    outline-color: orange;
+  }
+  @include media-breakpoint-up(md) {
+    outline-color: green;
+  }
+  @include media-breakpoint-up(lg) {
+    outline-color: blue;
+  }
+  @include media-breakpoint-up(xl) {
+    outline-color: magenta;
+  }
+}

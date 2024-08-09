@@ -1,0 +1,77 @@
+.nps-calc {
+  margin-block: var(--space-l);
+  border-radius: var(--border-radius);
+  background-color: var(--beige);
+
+  .nps-calc-scores {
+    display: flex;
+    column-gap: 5px;
+    flex-wrap: nowrap;
+    padding: var(--space-m) var(--space-m) 0;
+    justify-content: space-around;
+
+    label {
+      display: block;
+      color: var(--pink);
+      text-align: center;
+
+      &.passive {
+        color: var(--blue);
+      }
+
+      &.promoter {
+        color: var(--green);
+      }
+    }
+
+    .form-control {
+      display: block;
+      height: 3em;
+      margin-bottom: 1em;
+      border-width: 2px;
+      border-radius: var(--border-radius);
+      text-align: center;
+      padding: 5px;
+      width: 4rem;
+    }
+
+    [data-nps-detractor] {
+      border-color: var(--pink);
+    }
+
+    [data-nps-passive] {
+      border-color: var(--blue);
+    }
+
+    [data-nps-promoter] {
+      border-color: var(--green);
+    }
+  }
+
+  .nps-calc-out {
+    display: flex;
+    column-gap: var(--space-sm);
+    justify-content: space-around;
+
+    div {
+      max-width: 33%;
+      font: var(--step-4) var(--proxima-sb);
+      padding-bottom: var(--space-m);
+      text-align: center;
+    }
+
+    p, span {
+      font: var(--step-4) var(--proxima-sb);
+      margin-bottom: 0;
+    }
+
+    .nps-calc-promoters {
+      color: var(--green);
+    }
+
+    .nps-calc-detractors {
+      color: var(--pink);
+    }
+  }
+}
+

@@ -1,0 +1,96 @@
+.roundcard {
+  --card-padding: var(--space-s);
+  transition: transform .3s, color .3s, background-color .3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: var(--card-padding);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  background-color: #fff;
+
+  > * {
+    color: #000;
+  }
+
+  > a {
+    display: contents;
+
+    > :last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  > img,
+  > a > img,
+  header img {
+    max-width: calc(100% + (2 * var(--card-padding)));
+    margin: calc(-1 * var(--card-padding))
+            calc(-1 * var(--card-padding))
+            var(--card-padding)
+            calc(-1 * var(--card-padding));
+    border-radius: var(--border-radius) var(--border-radius) 0 0;
+  }
+
+  .circular-image-hed {
+    @media(min-width: 850px) {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    & h3 {
+      width: 100%;
+
+      &::before {
+        display: block;
+        background: transparent var(--image, url('/assets/img/pages/home/coffee-circle.png')) center / cover no-repeat;
+        height: 80px;
+        width: 80px;
+        content: ' ';
+        border-radius: 50%;
+        margin-block: var(--space-s);
+      }
+    }
+  }
+
+  > :last-child {
+    margin-bottom: 0;
+  }
+}
+
+// I didn’t want to add the class to the anchor tag here but I couldn’t think
+// of a better way of doing it using :has(). For example, :has(> a) will still
+// select cards where the <a> is inside a nested <footer> because
+// it matches the selector, `footer > a`.
+
+.roundcard:has(.roundcard-block-anchor):hover {
+  background-color: var(--blue);
+  transform: translateY(-5px);
+
+  > * {
+    color: #fff;
+  }
+}
+
+.case-study-roundcard {
+  @media(max-width: 50rem) {
+    margin-bottom: var(--space-m);
+    & header {
+      --header-shift: -2rem;
+      display: flex;
+      align-items: end;
+
+      & img {
+        height: 5rem;
+        clip-path: circle(33% at center);
+        margin: 0;
+        transform: translateX(var(--header-shift));
+      }
+
+      & h3 {
+        transform: translateX(var(--header-shift));
+      }
+    }
+  }
+}

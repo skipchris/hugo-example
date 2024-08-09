@@ -1,0 +1,78 @@
+.product-page-pane {
+  --child-width: 48%;
+
+  & h2 {
+    font-size: var(--step-7);
+  }
+
+  & h3 {
+    font-size: var(--step-4);
+    scroll-margin-top: var(--space-m);
+  }
+
+  & p {
+    font-size: var(--step-2);
+  }
+
+  & img {
+    max-width: 90%;
+  }
+
+  .albatross {
+    margin-block: var(--space-2xl);
+
+    > div {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    // Can’t use variables in MQs, but this should equal the --breakpoint variable
+    @media(min-width: 42rem) {
+      > div {
+        justify-content: top;
+      }
+
+      // This ensures that when we’re in single-column, the order is always:
+      // [text]
+      // [pic]
+      // …
+      // because our markup would otherwise collapse to:
+      // [text]
+      // [pic]
+      // [pic]
+      // [text]
+      // which is hard to understand
+      &:nth-child(even of .albatross) {
+        flex-direction: row-reverse;
+      }
+    }
+  }
+}
+
+.product-1 {
+  .pic {
+    background: transparent url('/assets/img/pages/product/product-1-comp.webp') center/contain no-repeat;
+  }
+
+  .albatross:first-child {
+    margin-block-start: 0;
+  }
+}
+
+.product-2 {
+  background-color: var(--beige);
+}
+
+.product-3 {
+  background: var(--purple);
+  color: var(--beige);
+}
+
+.product-4 {
+  padding-block-end: 0;
+
+  .albatross:last-child {
+    margin-block-end: 0;
+  }
+}

@@ -1,0 +1,117 @@
+body > footer {
+  margin: var(--space-m-2xl) auto 0;
+  padding-inline: var(--space-s-m);
+  max-width: var(--home-col-width);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  a:hover {
+    color: var(--purple-dark);
+  }
+
+  .contact {
+    margin-top: -26px;
+    font: var(--step--1) var(--proxima-sb);
+    padding-top: 85px;
+    background: transparent url(/assets/img/customersure.svg) top left / auto 60px no-repeat;
+
+    .here-to-help {
+      display: block;
+    }
+
+    > p {
+      margin-block-end: var(--space-xs);
+    }
+
+    > dl {
+      display: flex;
+      flex-wrap: wrap;
+      max-width: 12rem;
+      > dt  {
+        min-width: 4rem;
+      }
+      > dd {
+        min-width: 8rem;
+      }
+    }
+
+    .linkedin-bubble {
+      --bubble-bg: var(--blue) var(--icon-linkedin) center center no-repeat;
+      --dim: 3.5rem;
+      text-indent: -999999px;
+    }
+  }
+
+  .nav-col {
+    h3 {
+      margin-bottom: var(--space-2xs);
+      font-size: var(--step-1);
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 0;
+      li {
+        font-size: var(--step-1);
+        margin-bottom: var(--space-3xs);
+        padding: 0;
+        a {
+          font-family: var(--proxima-md);
+        }
+      }
+    }
+  }
+
+  .impressum {
+    width: 100%;
+    font: var(--step--1) var(--proxima-rg);;
+    margin-block: var(--space-xl);
+
+    > :first-child {
+      font-family: var(--proxima-b);
+      margin-block-end: 0;
+    }
+  }
+
+  @media (max-width: 50rem) {
+    flex-direction: column;
+    h3 {
+      margin-top: var(--space-s)
+    }
+    .contact {
+      margin-top: 0;
+    }
+  }
+}
+
+.footer-cta {
+  color: var(--bluegrey);
+  background: var(--purple);
+  text-align: center;
+  font-size: var(--step-2);
+  padding: var(--space-m-2xl) 0 var(--space-m-2xl);
+
+  .btn {
+    --button-colour: var(--blue);
+    --button-hover-colour: #fff;
+    --button-background: #fff;
+    --button-hover-background: var(--blue);
+    padding: 1rem 1.5rem 1rem 3.6rem;
+  }
+
+  .back-arrow {
+    --icon-w: 28px;
+    --icon-h: 28px;
+    --icon-left: 1.3rem;
+    --icon-top: calc(50% - 14px);
+    --icon-colour: var(--blue);
+    font-size: var(--step-1);
+    --svg-icon: var(--icon-back-arrow);
+  }
+
+  .back-arrow:hover {
+    --icon-colour: #fff;
+  }
+}

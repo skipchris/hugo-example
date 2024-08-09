@@ -1,0 +1,67 @@
+$breakpoint: 850px;
+
+@media(max-width: $breakpoint) {
+  body > header > nav {
+    display: none;
+    top: 0; right: 0; bottom: 0; left: 0;
+    z-index: 5;
+    position: fixed;
+    background-color: var(--purple);
+    color: var(--bluegrey);
+    overflow-y: scroll;
+
+    .dropdown-menu,
+    .dropdown-panel {
+      display: none;
+      border-block: 3px solid var(--purple-dark);
+
+      & a {
+        border-bottom: 1px solid var(--purple-dark)
+      }
+
+      & li:last-child  {
+        & a {
+          border-bottom: none;
+        }
+      }
+    }
+
+    & a,
+    button {
+      color: var(--bluegrey);
+    }
+
+    & button:after {
+      --caret-colour: var(--bluegrey);
+    }
+
+    .albatross {
+      display: block;
+    }
+
+    > ul {
+      > li {
+        & a, button {
+          display: block;
+          width: 100%;
+          padding: var(--space-s) var(--space-xs);
+          text-align: left;
+        }
+      }
+    }
+
+    & h3 {
+      margin-block: var(--space-s);
+      padding-left: var(--space-xs);
+    }
+  }
+
+  .nav-toggle-on,
+  .nav-toggle-off {
+    display: block;
+  }
+
+  .nav-toggle-off {
+    margin: var(--space-xs);
+  }
+}

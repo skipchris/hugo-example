@@ -1,0 +1,100 @@
+body > header {
+  display: flex;
+  align-items: center;
+  max-width: var(--home-col-width);
+  margin: 0 auto;
+  padding: var(--space-m) var(--space-xs);
+
+  > nav {
+    & button, a {
+      text-decoration: none;
+      font: var(--step-0) var(--proxima-b);
+    }
+
+    // Reset buttons to match links
+    & button {
+      padding-inline: 0;
+      border: 0;
+      background: transparent;
+    }
+
+    // Add carets
+    button:after {
+      display: inline-block;
+      content: "";
+      // Doing the colours like this makes it easier to change the caret colour on hover.
+      border: 0.25rem solid;
+      border-left-color: transparent;
+      border-right-color: transparent;
+      border-bottom-color: transparent;
+      margin-left: 0.25em;
+      position: relative;
+    }
+
+    // ANY ul/li in the navbar
+    & ul,
+    li {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    // top-level UL
+    > ul {
+      .dropdown-menu,
+      .dropdown-panel {
+        display: none;
+      }
+
+      > li:focus-within {
+        .dropdown-menu,
+        .dropdown-panel {
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+#nav-toggle {
+  display: none;
+}
+
+#nav-toggle:checked ~ nav {
+  display: block;
+}
+
+.nav-toggle-on,
+.nav-toggle-off {
+  --icon-w: 36px;
+  --icon-h: 36px;
+  --size: 50px;
+  --icon-top: calc(50% - (var(--icon-w) / 2));
+  --icon-left: calc(50% - (var(--icon-h) / 2));
+  text-indent: -999999px;
+  display: none;
+  height: var(--size);
+  min-height: var(--size);
+  width: var(--size);
+  min-width: var(--size);
+  cursor: pointer;
+  border: 1px solid var(--border-colour);
+  border-radius: var(--border-radius);
+}
+
+.nav-toggle-on {
+  --svg-icon: var(--icon-burger);
+  --icon-colour: var(--purple);
+  --border-colour: var(--purple);
+  margin-inline-start: auto;
+}
+
+.nav-toggle-off {
+  --svg-icon: var(--icon-x);
+  --icon-colour: var(--bluegrey);
+  --border-colour: var(--bluegrey);
+}
+
+.sign-in {
+  color: var(--pink);
+}
